@@ -1,3 +1,4 @@
+[![HuggingFace Demo](https://img.shields.io/badge/🤗%20Live%20Demo-HuggingFace-yellow)](https://huggingface.co/spaces/Afsha001/Image_captioning)
 # Image Captioning Refinement System Using Deep Learning and Computer-Vision
 
 ## Project Overview
