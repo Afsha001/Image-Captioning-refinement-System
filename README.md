@@ -143,13 +143,13 @@ BLIP embedding cosine similarity computed between each image and its 5 captions 
 
 All 8,091 images processed · **0 skipped** · Strong inter-signal consensus confirmed.
 
-![Voting Results](results/fig_voting_results.png)
+![Voting Results](results/fig_majority_voting.png)
 
 ---
 
 ### Qwen Caption Fusion — Sample Outputs
 
-![Fusion Samples](results/fig_fusion_samples.png)
+![Fusion Samples](results/fig_Qwen_fusion.png)
 
 > **Example:**
 > - Cap 1: *a little girl in a pink dress going into a wooden cabin*
@@ -196,9 +196,9 @@ image-captioning-refinement/
 └── results/
     ├── fig_cosine_distribution.png
     ├── fig_baseline_comparison.png
-    ├── fig_voting_results.png
-    ├── fig_fusion_samples.png
-    └── fig_word_frequency.png
+    ├── fig_majority_voting.png
+    ├── fig_Qwen_fusion.png
+    └── fig_combined_scores.png
 
 ---
 
@@ -222,7 +222,7 @@ streamlit run app.py
 | Degree | M.Sc. Data Science |
 | University | Aligarh Muslim University, Aligarh |
 | Department | Statistics & Operations Research |
-| Internship Centre | Interdisciplinary Centre for Artificial Intelligence (ICAI) |
+| Internship Centre | Interdisciplinary Centre for Artificial Intelligence |
 | Supervisor | Dr. Junaid Ali Reshi |
 | Co-Supervisors | Dr. Ahmad Yusuf Adhami · Dr. Mohd. Faizan · Dr. Shazia Farhin |
 | Session | 2025–26 |
