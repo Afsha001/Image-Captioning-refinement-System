@@ -121,7 +121,7 @@ Refined captions evaluated against 5 human reference captions per image.
 
 ### Baseline Comparison Chart
 
-![Baseline Comparison](results/fig_baseline_comparison.png)
+![Baseline Comparison](results/combined_scores.png)
 
 ---
 
@@ -135,7 +135,7 @@ BLIP embedding cosine similarity computed between each image and its 5 captions 
 | Worst Caption | 0.4452 | 0.0389 |
 | Average | 0.4912 | — |
 
-![Cosine Distribution](results/fig_cosine_distribution.png)
+![Cosine Distribution](results/cosine_distribution.png)
 
 ---
 
@@ -143,13 +143,13 @@ BLIP embedding cosine similarity computed between each image and its 5 captions 
 
 All 8,091 images processed · **0 skipped** · Strong inter-signal consensus confirmed.
 
-![Voting Results](results/fig_majority_voting.png)
+![Voting Results](results/majority_voting.png)
 
 ---
 
 ### Qwen Caption Fusion — Sample Outputs
 
-![Fusion Samples](results/fig_Qwen_fusion.png)
+![Fusion Samples](results/Qwen_fusion.png)
 
 > **Example:**
 > - Cap 1: *a little girl in a pink dress going into a wooden cabin*
@@ -205,7 +205,7 @@ image-captioning-refinement/
 ## ▶️ Run Locally
 
 ```bash
-git clone https://github.com/YourUsername/image-captioning-refinement
+git clone https://github.com/Afsha001/image-captioning-refinement
 cd image-captioning-refinement
 pip install -r requirements.txt
 streamlit run app.py
