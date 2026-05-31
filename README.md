@@ -143,14 +143,13 @@ BLIP embedding cosine similarity computed between each image and its 5 captions 
 
 All 8,091 images processed · **0 skipped** · Strong inter-signal consensus confirmed.
 
-<img width="1071" height="954" alt="majority voting" src="https://github.com/user-attachments/assets/896c83f3-8a16-46a0-9f1d-9910d571a59c" />
-
+![Majority Voting Results](results/majority voting.png)
 
 ---
 
 ### Qwen Caption Fusion — Sample Outputs
 
-![Fusion Samples]<img width="745" height="725" alt="Qwen fusion" src="https://github.com/user-attachments/assets/83566fd7-4664-459d-b869-21ee0ab086f3" />
+![Qwen Caption Fusion](results/Qwen fusion.png)
 
 
 > **Example:**
@@ -196,11 +195,11 @@ image-captioning-refinement/
 ├── LICENSE
 │
 └── results/
-    ├── fig_cosine_distribution.png
-    ├── fig_baseline_comparison.png
-    ├── fig_majority_voting.png
-    ├── fig_Qwen_fusion.png
-    └── fig_combined_scores.png
+    ├── cosine_distribution.png
+    ├── baseline_comparison.png
+    ├── majority_voting.png
+    ├── Qwen_fusion.png
+    └── combined_scores.png
 
 ---
 
