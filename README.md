@@ -52,7 +52,7 @@ The system was built and evaluated on the **Flickr8k dataset** (8,091 images · 
 ---
 
 ## ⚙️ System Pipeline & Workflow
-INPUT IMAGE
+INPUT IMAGE                               
      │
      ▼
 ┌─────────────────────────────────────────┐
@@ -143,13 +143,15 @@ BLIP embedding cosine similarity computed between each image and its 5 captions 
 
 All 8,091 images processed · **0 skipped** · Strong inter-signal consensus confirmed.
 
-![Voting Results](results/majority voting.png)
+<img width="1071" height="954" alt="majority voting" src="https://github.com/user-attachments/assets/896c83f3-8a16-46a0-9f1d-9910d571a59c" />
+
 
 ---
 
 ### Qwen Caption Fusion — Sample Outputs
 
-![Fusion Samples](results/Qwen fusion.png)
+![Fusion Samples]<img width="745" height="725" alt="Qwen fusion" src="https://github.com/user-attachments/assets/83566fd7-4664-459d-b869-21ee0ab086f3" />
+
 
 > **Example:**
 > - Cap 1: *a little girl in a pink dress going into a wooden cabin*
