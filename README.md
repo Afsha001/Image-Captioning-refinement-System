@@ -1,4 +1,6 @@
 ## 📓 Notebook & Demo
+> ⚠️ **Note:** The notebook file is too large to preview directly on GitHub.
+> Please use the buttons below to open it.
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Afsha001/Image-Captioning-refinement-System/blob/main/Image_captioning.ipynb)
 &nbsp;
@@ -39,7 +41,7 @@ The system was built and evaluated on the **Flickr8k dataset** (8,091 images · 
 
 ## 🚀 Live Demo
 
-> Upload any image and get a refined, detailed caption in seconds.
+> Upload any image and get a refined, detailed caption.
 
 👉 **[Try the Live App on HuggingFace Spaces](https://huggingface.co/spaces/Afsha001/Image_captioning)**
 
