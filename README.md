@@ -143,7 +143,7 @@ BLIP embedding cosine similarity computed between each image and its 5 captions 
 
 All 8,091 images processed · **0 skipped** · Strong inter-signal consensus confirmed.
 
-![Majority Voting Results](results/majority voting.png)
+![Majority_Voting_Results](results/majority_voting.png)
 
 ---
 
