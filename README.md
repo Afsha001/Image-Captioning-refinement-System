@@ -41,7 +41,7 @@ The system was built and evaluated on the **Flickr8k dataset** (8,091 images · 
 
 ## 🗂️ Dataset
 
-# Why Flickr8k?
+### Why Flickr8k?
 Flickr8k provides 8,092 real-world images each paired with 5 independently written human captions — this multi-reference structure is the key reason. Having 5 references per image allowed the scoring signals (BLIP ITM, Jina, Cosine) to evaluate caption quality against a diverse human benchmark, and the evaluation metrics (BLEU, METEOR, CIDEr) to compare refined outputs against multiple valid descriptions rather than just one. It is also lightweight enough to run the full pipeline on free-tier GPU (Google Colab) without truncation.
 
 ---
