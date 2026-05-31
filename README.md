@@ -1,4 +1,10 @@
-[![HuggingFace Demo](https://img.shields.io/badge/🤗%20Live%20Demo-HuggingFace-yellow)](https://huggingface.co/spaces/Afsha001/Image_captioning)
+## 📓 Notebook & Demo
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Afsha001/image-captioning-refinement/blob/main/Image_captioning.ipynb)
+&nbsp;
+[![View on nbviewer](https://img.shields.io/badge/Jupyter-nbviewer-orange?style=flat&logo=jupyter)](https://nbviewer.org/github/Afsha001/image-captioning-refinement/blob/main/Image_captioning.ipynb)
+&nbsp;
+[![HuggingFace Demo](https://img.shields.io/badge/🤗%20Live%20Demo-HuggingFace-yellow?style=flat)](https://huggingface.co/spaces/Afsha001/Image_captioning)
 <div align="center">
 
 # 🖼️ Image Captioning Refinement Using Deep Learning
