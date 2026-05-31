@@ -141,7 +141,6 @@ All 8,091 images processed · **0 skipped** · Strong inter-signal consensus con
 ---
 
 ## 📁 Repository Structure
-## 📂 Project Structure
 ```
 image-captioning-refinement/
 ├── app.py                          # HuggingFace Streamlit application
