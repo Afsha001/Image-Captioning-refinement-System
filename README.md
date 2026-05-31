@@ -10,6 +10,8 @@
 [![HuggingFace Demo](https://img.shields.io/badge/🤗%20Live%20Demo-HuggingFace%20Spaces-yellow?style=for-the-badge)](https://huggingface.co/spaces/Afsha001/Image_captioning)
 [![Streamlit](https://img.shields.io/badge/Streamlit-App-red?style=for-the-badge&logo=streamlit)](https://streamlit.io)
 ![REST API](https://img.shields.io/badge/REST_API-Jina-009191?style=flat&logo=fastapi&logoColor=white)
+
+
 **M.Sc. Data Science — Aligarh Muslim University, Aligarh · 2025–26**
 
 </div>
