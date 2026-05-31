@@ -38,57 +38,52 @@ The system was built and evaluated on the **Flickr8k dataset** (8,091 images · 
 ---
 
 ## 🗂️ Dataset
+graph TD
+    %% Input
+    Input([IMAGE INPUT]) --> Stage1
 
-| Property | Value |
-|---|---|
-| Dataset | Flickr8k |
-| Total Images | 8,092 |
-| Valid Images Used | 8,091 |
-| Captions per Image | 5 (human-written) |
-| Total Annotations | 40,460 |
-| Avg Caption Length | 11.78 words |
-| Unique Vocabulary | 8,918 words |
+    %% Generation Stage
+    subgraph S1 [Stage 1: Generation]
+        Stage1[Florence-2-Large]
+        S1_Desc[Generates 5 diverse caption candidates]
+    end
+    
+    Stage1 --> Ranking
 
----
+    %% Scoring/Ranking Stage
+    subgraph Ranking [Selection & Ranking]
+        direction LR
+        S2[Stage 2: BLIP ITM Scoring]
+        S3[Stage 3: Jina Reranker API]
+        S4[Stage 4: Cosine Similarity]
+    end
 
-## ⚙️ System Pipeline & Workflow
-INPUT IMAGE                               
-     │
-     ▼
-┌─────────────────────────────────────────┐
-│  STAGE 1 — Florence-2-Large             │
-│  Generates 5 diverse caption candidates │
-│  using 3 task tokens + sampling         │
-└────────────────┬────────────────────────┘
-                 │  5 candidates
-     ┌───────────┼───────────┐
-     ▼           ▼           ▼
-┌─────────┐ ┌─────────┐ ┌──────────────┐
-│ STAGE 2 │ │ STAGE 3 │ │   STAGE 4    │
-│ BLIP ITM│ │  Jina   │ │   Cosine     │
-│ Scoring │ │Reranker │ │  Similarity  │
-│ (Local) │ │  (API)  │ │   (Local)    │
-└────┬────┘ └────┬────┘ └──────┬───────┘
-     └───────────┴─────────────┘
-                 │  3 × top-2 votes
-                 ▼
-┌─────────────────────────────────────────┐
-│  STAGE 5 — Majority Voting              │
-│  6 votes tallied · top-2 selected       │
-│  8,091 images · 0 skipped              │
-└────────────────┬────────────────────────┘
-                 │  voted_cap1 + voted_cap2
-                 ▼
-┌─────────────────────────────────────────┐
-│  STAGE 6 — Qwen2.5-1.5B-Instruct       │
-│  Fuses 2 captions into 1 refined        │
-│  comprehensive caption                  │
-└────────────────┬────────────────────────┘
-                 │
-                 ▼
-        FINAL REFINED CAPTION
-     + Caption Quality Score (0–1)
+    Ranking --> S5
 
+    %% Voting Stage
+    subgraph S5 [Stage 5: Consensus]
+        Stage5[Majority Voting]
+        S5_Desc[6 votes tallied from Stages 2-4]
+    end
+
+    Stage5 --> Stage6
+
+    %% Fusion Stage
+    subgraph S6 [Stage 6: Fusion]
+        Stage6[Qwen2.5-1.5B-Instruct]
+        S6_Desc[Fuses top 2 captions into 1 refined version]
+    end
+
+    %% Final Output
+    Stage6 --> Output([FINAL REFINED CAPTION + Quality Score])
+
+    %% Styling
+    style Input fill:#f9f,stroke:#333,stroke-width:2px
+    style Output fill:#bbf,stroke:#333,stroke-width:2px
+    style S1 fill:#fff4dd,stroke:#d4a017
+    style S5 fill:#fff4dd,stroke:#d4a017
+    style S6 fill:#e1f5fe,stroke:#01579b
+    style Ranking fill:#f1f8e9,stroke:#33691e
 ---
 
 ## 🧠 Models Used
@@ -119,12 +114,6 @@ Refined captions evaluated against 5 human reference captions per image.
 
 ---
 
-### Baseline Comparison Chart
-
-![Baseline Comparison](results/combined scores.png)
-
----
-
 ### Cosine Similarity Score Distribution
 
 BLIP embedding cosine similarity computed between each image and its 5 captions across all 8,091 images.
@@ -135,7 +124,6 @@ BLIP embedding cosine similarity computed between each image and its 5 captions 
 | Worst Caption | 0.4452 | 0.0389 |
 | Average | 0.4912 | — |
 
-![Cosine Distribution](results/cosine distribution.png)
 
 ---
 
@@ -149,7 +137,8 @@ All 8,091 images processed · **0 skipped** · Strong inter-signal consensus con
 
 ### Qwen Caption Fusion — Sample Outputs
 
-![Qwen Caption Fusion](results/Qwen fusion.png)
+<img width="550" height="525" alt="Qwen_fusion" src="https://github.com/user-attachments/assets/ab89acfd-c0ab-474d-8d54-6a65eef3a3c3" />
+
 
 
 > **Example:**
@@ -186,20 +175,20 @@ All 8,091 images processed · **0 skipped** · Strong inter-signal consensus con
 ---
 
 ## 📁 Repository Structure
+## 📂 Project Structure
+
 image-captioning-refinement/
-│
 ├── app.py                          # HuggingFace Streamlit application
 ├── requirements.txt                # Python dependencies
 ├── Image_captioning_notebook.ipynb # Full research pipeline notebook
-├── README.md
-├── LICENSE
-│
-└── results/
-    ├── cosine_distribution.png
-    ├── baseline_comparison.png
-    ├── majority_voting.png
-    ├── Qwen_fusion.png
-    └── combined_scores.png
+├── README.md                       # Documentation
+├── LICENSE                         # Open-source license
+└── results/                        # Experimental charts & visualizations
+    ├── cosine_distribution.png     # Visualizing BLIP embedding similarity
+    ├── baseline_comparison.png     # Comparison against standard benchmarks
+    ├── majority_voting.png         # Consensus stage performance
+    ├── Qwen_fusion.png             # LLM refinement output analysis
+    └── combined_scores.png         # BLEU, CIDEr, and METEOR metrics
 
 ---
 
